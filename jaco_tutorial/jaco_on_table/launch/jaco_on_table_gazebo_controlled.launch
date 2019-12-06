@@ -18,6 +18,12 @@
   
   <arg name="gazebo_world_file" default="worlds/empty.world"/>
 
+  # connect to Unity
+  <include file="$(find rosbridge_server)/launch/rosbridge_websocket.launch">
+	<param name="port" value="9090"/>
+  </include>
+  <node name="file_server" pkg="file_server" type="file_server" output="screen"/>
+
   # set to true if the gazebo_state_plugin/gazebo_object_info world plugin should be loaded
   <arg name="load_gazebo_objects_plugin" default="true"/>
   

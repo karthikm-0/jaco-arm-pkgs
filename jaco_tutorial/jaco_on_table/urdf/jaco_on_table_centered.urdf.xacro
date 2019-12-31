@@ -29,8 +29,9 @@
 
   <xacro:include filename="$(find jaco_on_table)/urdf/objects/table.xacro" />
   <joint name="table_to_arm" type="fixed">
-    <origin xyz="0.40488474042 0.27988474042 0.3" rpy="0 0 -0.785398163397458" />
-    <origin xyz="0.40488474042 0.27988474042 0.3" rpy="0 0 0"/>
+    <!--origin xyz="0.40488474042 0.27988474042 0.3" rpy="0 0 -0.785398163397458" /-->
+    <!--removed rotation from table and centered table-->
+    <origin xyz="0 0 0.3" rpy="0 0 0"/>
     <parent link="robot_base"/>
     <child link="table_base"/>
   </joint>
@@ -48,6 +49,7 @@
   <!-- Add the JACO arm to the given parent link with the given transforms -->
   <xacro:jaco_arm parent="arm_stand" mass_divider="2" finger_mass_divider="1">
     <origin xyz="-0.000482247085224208 0.08 -0.000503436190578577" rpy="1.57079632679 0 3.14159265359" />
+    <!--origin xyz="-0 0 0.1" rpy="0 0 0" /-->
     <xacro:arg name="add_transmission_pos" default="$(arg add_transmission_pos)"/>
     <xacro:arg name="add_transmission_vel" default="$(arg add_transmission_vel)"/>
   </xacro:jaco_arm>

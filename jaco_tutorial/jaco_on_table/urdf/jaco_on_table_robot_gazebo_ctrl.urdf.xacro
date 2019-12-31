@@ -17,7 +17,7 @@
         <static>false</static>
     </link>
 -->
-    <xacro:include filename="$(find jaco_on_table)/urdf/jaco_on_table.urdf.xacro">
+    <xacro:include filename="$(find jaco_on_table)/urdf/jaco_on_table_centered.urdf.xacro">
         <xacro:arg name="add_transmission_pos" default="$(arg add_transmission_pos)"/>
         <xacro:arg name="add_transmission_vel" default="$(arg add_transmission_vel)"/>
     </xacro:include>
